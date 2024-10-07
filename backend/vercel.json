@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.js", 
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/app.js" 
+    }
+  ],
+  "env": {
+    "PORT": "5000",
+    "NODE_ENV": "production",
+    "REDIRECT_URI":"https://employee-management-bend.vercel.app",
+    "DB_URL":"mongodb+srv://Pugazh:I6azfWOodrdXhyVA@cluster0.hi0sa.mongodb.net/NexGenLearn?retryWrites=true&w=majority&appName=Cluster0",
+    "cloud_name": "ds42cgwzt",
+    "api_key": "118916443755317", 
+    "api_secret": "ezMQ45dIEjIVAYdm6PJv2_epwDI" 
+  }
+}
