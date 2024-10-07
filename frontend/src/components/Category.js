@@ -24,7 +24,7 @@ const Category = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/courses/department/${category}`);
+        const response = await axios.get(`https://nex-gen-learn-deployment.vercel.app/api/courses/department/${category}`);
         setCourses(response.data);
         setLoading(false);
       } catch (error) {
@@ -40,7 +40,7 @@ const Category = () => {
     const enrolledCoursesList = async (email) => {
       if (email) {
         try {
-          const response = await axios.get(`http://localhost:5000/api/user/allenrolled/${email}`);
+          const response = await axios.get(`https://nex-gen-learn-deployment.vercel.app/api/user/allenrolled/${email}`);
           const enrolled = response.data.isEnrolled.reduce((acc, courseId) => {
             acc[courseId] = true;
             return acc;
@@ -64,7 +64,7 @@ const Category = () => {
   const checkEnrollment = async (id) => {
     if (email) {
       try {
-        const response = await axios.get(`http://localhost:5000/api/user/enrolled/${email}/${id}`);
+        const response = await axios.get(`https://nex-gen-learn-deployment.vercel.app/api/user/enrolled/${email}/${id}`);
         return response.data.isEnrolled;
       } catch (error) {
         console.error("Error checking enrollment:", error);
@@ -83,7 +83,7 @@ const Category = () => {
 
     setEnrollLoading(true);
     try {
-      const response = await axios.post(`http://localhost:5000/api/user/enroll/${email}/${id}`);
+      const response = await axios.post(`https://nex-gen-learn-deployment.vercel.app/api/user/enroll/${email}/${id}`);
       if (response.data) {
         alert("Enrolled successfully");
         setEnrolledCourses((prev) => ({ ...prev, [id]: true }));
