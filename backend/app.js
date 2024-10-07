@@ -30,9 +30,9 @@ app.use(cors({
     next();
 }  */
 //app.use(access);
-app.get('/'){
+app.get('/', (req, res) => {
     res.send("Hello World");
-}
+});
 app.use('/api/courses', CourseRoute);
 app.use('/api/instructor',InstructorRoute);
 app.use('/api/user',UserRoute);
