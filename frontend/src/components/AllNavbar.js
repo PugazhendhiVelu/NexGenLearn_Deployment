@@ -103,7 +103,7 @@ const Navbar = ({ categoryNames }) => {
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/user/login', formLoginData);
+      const res = await axios.post(`process.env.ocpurl/api/user/login`, formLoginData);
       const { token } = res.data; // Assuming the response contains the email directly
       localStorage.setItem('UserToken', token);
       setLoggedIn(true);
