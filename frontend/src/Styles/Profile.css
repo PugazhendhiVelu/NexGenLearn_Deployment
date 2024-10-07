@@ -1,0 +1,121 @@
+/* Container for the profile page */
+.profile-container-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+  }
+  
+  /* Main profile box styling */
+  .profile-container {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    width: 60%;
+    max-width: 800px;
+    height: auto;
+    margin: 30px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .profile-container:hover {
+    transform: translateY(-10px);
+  }
+  
+  /* Styling for the buttons container */
+  .profile-buttons {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    margin: 20px;
+  }
+  
+  /* Enrolled Courses Button */
+  .profile-buttons div:first-child a {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  /* Enrolled Courses Button Hover Effect */
+  .profile-buttons div:first-child a:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* User Profile Heading */
+  .profile-container-head h1 {
+    color: #333;
+    font-size: 32px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling for user profile data */
+  .profile-container h2 {
+    background-color: #f8f9fa;
+    padding: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Error message styling */
+  .error {
+    color: red;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  /* Button hover effects */
+  .profile-buttons a:hover {
+    opacity: 0.9;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .profile-container {
+      width: 90%;
+      padding: 30px;
+    }
+    
+    .profile-buttons {
+      width: 100%;
+    }
+    
+    .profile-buttons div:first-child a {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .profile-container-head h1 {
+      font-size: 24px;
+    }
+    
+    .profile-container h2 {
+      font-size: 16px;
+    }
+  }
+  

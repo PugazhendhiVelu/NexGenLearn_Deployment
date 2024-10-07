@@ -1,0 +1,116 @@
+/* Course Carousel Container */
+.home-course-content {
+    position: relative;
+    padding: 20px;
+    background-color: inherit;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Course Cards */
+.home-course-card {
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    background-color: #ffffff;
+    border-radius: 1px;
+    text-align: center;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Include box-shadow in transition */
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 15px;
+    margin-right: 0px; /* Increase space between cards */
+    width: 350px !important; /* Adjust width to allow for margins */
+    display: inline-block; /* Ensure cards are inline */
+}
+
+.home-course-card:hover {
+    transform: translateY(-5px); /* Slight upward movement */
+}
+
+/* Course Image */
+.home-course-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Buttons */
+.home-course-buttons {
+    margin-top: 10px;
+}
+
+.home-enroll-btn, .home-info-btn {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.home-enroll-btn {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.home-info-btn {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Slick Carousel Overrides */
+.slick-prev,
+.slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Bootstrap-like navigation buttons */
+.carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.carousel-control-prev {
+    left: -60px;
+}
+
+.carousel-control-next {
+    right: -60px;
+}
+
+/* Arrow icons */
+.carousel-control-prev-icon::before,
+.carousel-control-next-icon::before {
+    font-size: 24px;
+    color: white;
+    content: '';
+}
+
+/* Hover effect */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
