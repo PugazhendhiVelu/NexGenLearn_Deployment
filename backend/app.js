@@ -15,17 +15,17 @@ DBConnect();
 app.use(cookieParser());
 
 app.use(express.json());
-const allowedOrigins = "https://nex-gen-learn-deployment-frontend.vercel.app";
+const allowedOrigin = "https://nex-gen-learn-deployment-frontend.vercel.app";
 // Use CORS middleware
 app.use(cors({
-    origin: allowedOrigins,
+    origin: allowedOrigin,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true // Allow cookies to be sent and received
 }));
 
 // Handle preflight requests
 app.options('*', cors({
-    origin: allowedOrigins,
+    origin: allowedOrigin,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true
 }));
