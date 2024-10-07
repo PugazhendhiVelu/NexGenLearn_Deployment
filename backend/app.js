@@ -15,7 +15,7 @@ DBConnect();
 app.use(cookieParser());
 
 app.use(express.json());
-const allowedOrigins = "https://nex-gen-learn-deployment-frontend.vercel.app/";
+const allowedOrigins = "https://nex-gen-learn-deployment-frontend.vercel.app";
 app.use(cors({
     origin: allowedOrigins, // Replace with your frontend URL
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
