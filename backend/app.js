@@ -30,15 +30,15 @@ app.options('*', cors({
     credentials: true
 }));
 
-/* const access = (req,res,next)=>{
+ const access = (req,res,next)=>{
     const origin = req.headers.origin;
     if (origin !== allowedOrigin) {
         return res.status(403).sendFile(path.join(__dirname, 'template', 'Error403.html'));
         // return res.status(403).send('Access denied. Invalid origin , You are not authorised to access this resource.');
     }
     next();
-}  */
-//app.use(access);
+}
+app.use(access);
 app.get('/', (req, res) => {
     res.send("Hello World");
 });
