@@ -16,6 +16,7 @@ app.use(cookieParser());
 
 app.use(express.json());
 const allowedOrigin = "https://nex-gen-learn-deployment-frontend.vercel.app";
+
 // Use CORS middleware
 app.use(cors({
     origin: allowedOrigin,
