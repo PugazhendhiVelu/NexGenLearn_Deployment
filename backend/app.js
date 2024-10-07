@@ -22,14 +22,6 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true // Allow cookies to be sent and received
 }));
-
-// Handle preflight requests
-app.options('*', cors({
-    origin: allowedOrigin,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    credentials: true
-}));
-
  const access = (req,res,next)=>{
     const origin = req.headers.origin;
     if (origin !== allowedOrigin) {
