@@ -18,6 +18,7 @@ app.use(express.json());
 const allowedOrigin = process.env.REDIRECT_URL;
 app.use(cors({
     origin: allowedOrigin, // Replace with your frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true // Allow cookies to be sent and received
 }));
 
