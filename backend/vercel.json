@@ -16,7 +16,7 @@
     "PORT": "5000",
     "NODE_ENV": "production",
     "REDIRECT_URI":"https://nex-gen-learn-deployment-frontend.vercel.app/",
-    "DB_URL":"mongodb+srv://Pugazh:I6azfWOodrdXhyVA@cluster0.hi0sa.mongodb.net/NexGenLearn?retryWrites=true&w=majority&appName=Cluster0",
+    "DB_URL":"mongodb+srv://Pugazhendhi:0kKlipVQb71aQtki@cluster0.hi0sa.mongodb.net/NexGenLearn?retryWrites=true&w=majority&appName=Cluster0",
     "cloud_name": "ds42cgwzt",
     "api_key": "118916443755317", 
     "api_secret": "ezMQ45dIEjIVAYdm6PJv2_epwDI" 
