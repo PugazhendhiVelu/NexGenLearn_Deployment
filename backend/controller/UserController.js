@@ -39,36 +39,39 @@ const createUser = async (req, res) => {
         res.status(500).send('Server error');
     }
 };
-const loginUser = async (req,res)=>{
-    const email  = req.body.email || req.body.emailLogin;
+const loginUser = async (req, res) => {
+    const email = req.body.email || req.body.emailLogin;
     const password = req.body.password || req.body.passwordLogin;
-    
-    try{
-        const user = await UserModel.findOne({email});
-        if(!user){
-            return res.send("No User found with this data");
+
+    try {
+        const user = await UserModel.findOne({ email });
+        if (!user) {
+            return res.status(404).json({ message: "No user found with this email." });
         }
-        const hashedPassword = await bcrypt.compare(password,user.password);
-        if(!hashedPassword){
-            return res.status(400).send("Invalid credentials");
+
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+        if (!isPasswordValid) {
+            return res.status(400).json({ message: "Invalid credentials." });
         }
-        const token = jwt.sign({email: email}, 
-            "jwt-access-token-secret-key", {expiresIn: '1d'})
-            res.cookie('usertoken', token, {
-                maxAge: 60 * 60 * 1000, // 1 hr
-                httpOnly: false, // Set to true if you want the cookie to be inaccessible to JavaScript
-                secure: false, // Set to true if you're using HTTPS
-                sameSite: 'None', // 'None' to allow cross-site cookies
-                path: '/',
-            });
-            
-          console.log(token)
-          return res.status(200).json({ token });
-    }catch(error){
+
+        const token = jwt.sign({ email: email }, process.env.JWT_SECRET || "jwt-access-token-secret-key", { expiresIn: '1d' });
+
+        res.cookie('usertoken', token, {
+            maxAge: 60 * 60 * 1000, // 1 hour
+            httpOnly: true, // Prevents JavaScript access
+            secure: process.env.NODE_ENV === 'production', // Use HTTPS in production
+            sameSite: 'None', // Adjust based on your needs
+            path: '/',
+        });
+
+        console.log("Token generated:", token);
+        return res.status(200).json({ token });
+    } catch (error) {
         console.error('Login error:', error);
-        res.status(500).send('Server error');
+        return res.status(500).json({ message: 'Server error' });
     }
 };
+
 const getenrollCourse = async (req, res) => {
     const { email } = req.params;
     try {
