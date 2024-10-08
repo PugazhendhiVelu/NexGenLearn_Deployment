@@ -37,9 +37,9 @@ const access = (req, res, next) => {
 
 app.use(access);
 
-app.get('/',async(req,res)=>{
+app.get('/', async (req, res) => {
     res.send("Hello World");
-})
+});
 app.use('/api/courses', CourseRoute);
 app.use('/api/instructor', InstructorRoute);
 app.use('/api/user', UserRoute);
