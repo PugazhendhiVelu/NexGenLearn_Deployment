@@ -91,7 +91,9 @@ const Navbar = ({ categoryNames }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://nex-gen-learn-deployment.vercel.app/api/user/register', formData);
+      const res = await axios.post('https://nex-gen-learn-deployment.vercel.app/api/user/register', formData, {
+          timeout: 10000 // Set timeout to 10 seconds
+      });
       alert('User registered successfully!');
       toggleLoginPopup();
     } catch (error) {
