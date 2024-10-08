@@ -1,0 +1,27 @@
+.main-dept{
+    margin: 0;
+    padding: 0;
+}
+.sub-dept{
+    margin-bottom: 50px;
+    
+}
+h2{
+    text-align: left;
+    padding-left: 20px;
+}
+
+.dept-title{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+}
+.dept-title a{
+    text-decoration: none;
+    padding-right: 20px;
+    
+}
+.dept-title a:hover {
+    text-decoration: underline; /* Optional: underline on hover */
+}

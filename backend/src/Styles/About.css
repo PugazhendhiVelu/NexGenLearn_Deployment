@@ -1,0 +1,11 @@
+.about-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: whitesmoke;
+    border-radius: 12px;
+    font-family: Arial, sans-serif;
+}
+
+
+

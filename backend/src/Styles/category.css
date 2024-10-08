@@ -1,0 +1,75 @@
+.main-category{
+    margin: 0;
+    padding: 20px;
+}
+
+.main-categories-courses{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+.card-course {
+    margin: 20px;
+    width: 250px;
+    height: 350px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px lightblue;
+    border: 1px solid black;
+    background-color: rgb(255, 255, 255);
+    display: flex; /* Use flexbox to align items */
+    flex-direction: column; /* Stack items vertically */
+    
+    padding: 15px; /* Add padding inside the card */
+}
+.card-course p{
+    margin: 8px;
+}
+
+.image-cover {
+    width: 100%; /* Ensure the image cover takes full width */
+    height: 150px; /* Set a fixed height for the image cover */
+    overflow: hidden; /* Hide overflow if the image is too large */
+}
+
+.image-cover img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 15px 15px 0 0; /* Round the top corners */
+}
+
+.home-course-buttons {
+    display: flex; /* Use flexbox for buttons */
+    justify-content: space-between; /* Space buttons evenly */
+}
+
+.home-course-buttons {
+    margin-top: 10px;
+}
+
+.home-enroll-btn, .home-info-btn,.home-certificate-btn {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.home-enroll-btn {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.home-info-btn {
+    background-color: #007bff;
+    color: #fff;
+}
+.home-certificate-btn{
+    color: #000000;
+    background-color: gold;
+}
