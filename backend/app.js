@@ -25,15 +25,15 @@ app.use(cors({
     credentials: true // Allow cookies to be sent and received
 }));
 
-/* const access = (req,res,next)=>{
+ const access = (req,res,next)=>{
     const origin = req.headers.origin;
     if (origin !== allowedOrigin) {
         return res.status(403).sendFile(path.join(__dirname, 'template', 'Error403.html'));
         // return res.status(403).send('Access denied. Invalid origin , You are not authorised to access this resource.');
     }
     next();
-}  */
-//app.use(access);
+} 
+app.use(access);
 app.use('/api/courses', CourseRoute);
 app.use('/api/instructor',InstructorRoute);
 app.use('/api/user',UserRoute);
