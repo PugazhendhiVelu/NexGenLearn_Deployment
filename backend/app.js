@@ -32,23 +32,23 @@ app.options('*', cors({
 }));
 
 // Modify custom access middleware to bypass OPTIONS requests
-const access = (req, res, next) => {
-    // Bypass OPTIONS requests
-    if (req.method === 'OPTIONS') {
-        return next();
-    }
+// const access = (req, res, next) => {
+//     // Bypass OPTIONS requests
+//     if (req.method === 'OPTIONS') {
+//         return next();
+//     }
 
-    const origin = req.headers.origin;
-    if (origin !== allowedOrigin) {
-        return res.status(403).sendFile(path.join(__dirname, 'template', 'Error403.html'));
-        // Optionally, just send a simple message instead of serving a file
-        // return res.status(403).send('Access denied. Invalid origin.');
-    }
-    next();
-};
+//     const origin = req.headers.origin;
+//     if (origin !== allowedOrigin) {
+//         return res.status(403).sendFile(path.join(__dirname, 'template', 'Error403.html'));
+//         // Optionally, just send a simple message instead of serving a file
+//         // return res.status(403).send('Access denied. Invalid origin.');
+//     }
+//     next();
+// };
 
-// Make sure this runs AFTER CORS middleware
-app.use(access);
+// // Make sure this runs AFTER CORS middleware
+// app.use(access);
 
 app.get('/', (req, res) => {
     res.send("Hello World");
