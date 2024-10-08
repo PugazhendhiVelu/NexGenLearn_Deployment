@@ -19,7 +19,7 @@ const redirectUrl = process.env.REDIRECT_URL;
 console.log(redirectUrl);
 
 app.use(express.json());
-const allowedOrigin = ['http://localhost:3000', 'http://localhost:3006'];
+const allowedOrigin = ['https://nex-gen-learn-deployment-frontend.vercel.app'];
 app.use(cors({
     origin: allowedOrigin, // Replace with your frontend URL
     credentials: true // Allow cookies to be sent and received
